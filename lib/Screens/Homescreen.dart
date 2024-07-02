@@ -19,7 +19,7 @@ class _HomepageState extends State<Homepage> {
       backgroundColor: kCream,
       extendBody: true,
       floatingActionButton: OpenContainer(
-        closedColor: kNavyBlue,
+        closedColor: kOrange,
         transitionType: ContainerTransitionType.fade,
         openBuilder: (BuildContext context, VoidCallback _) {
           return Userspage();
@@ -31,10 +31,10 @@ class _HomepageState extends State<Homepage> {
         closedBuilder: (BuildContext context, VoidCallback openContainer) {
           return FloatingActionButton(
             onPressed: openContainer,
-            backgroundColor: kNavyBlue,
+            backgroundColor: kOrange,
             child: Icon(
               Icons.menu,
-              color: Colors.white,
+              color: kCream,
             ),
           );
         },
@@ -42,10 +42,10 @@ class _HomepageState extends State<Homepage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         elevation: 6.0,
-        shadowColor: kCream,
+        shadowColor: kOrange,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         height: 60,
-        color: kNavyBlue,
+        color: kOrange,
         shape: const CircularNotchedRectangle(),
         notchMargin: 5,
         child: Row(
@@ -57,7 +57,7 @@ class _HomepageState extends State<Homepage> {
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(
                 Icons.home,
-                color: _selectedIndex == 0 ? Colors.blue : Colors.red,
+                color: _selectedIndex == 0 ? kNavyBlue : kCream,
               ),
               onPressed: () {
                 setState(() {
@@ -71,7 +71,7 @@ class _HomepageState extends State<Homepage> {
               padding: EdgeInsets.only(right: 28.0),
               icon: Icon(
                 Icons.people,
-                color: _selectedIndex == 1 ? Colors.blue : Colors.red,
+                color: _selectedIndex == 1 ? kNavyBlue : kCream,
               ),
               onPressed: () {
                 setState(() {
@@ -84,8 +84,8 @@ class _HomepageState extends State<Homepage> {
               iconSize: 30.0,
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(
-                Icons.store,
-                color: _selectedIndex == 2 ? Colors.blue : Colors.red,
+                Icons.message,
+                color: _selectedIndex == 2 ? kNavyBlue : kCream,
               ),
               onPressed: () {
                 setState(() {
@@ -96,18 +96,19 @@ class _HomepageState extends State<Homepage> {
             ),
             IconButton(
               iconSize: 30.0,
-              padding: EdgeInsets.only(left: 28.0),
+              padding: EdgeInsets.only(right: 28.0),
               icon: Icon(
-                Icons.store,
-                color: _selectedIndex == 3 ? Colors.blue : Colors.red,
+                Icons.logout,
+                color: _selectedIndex == 3 ? kNavyBlue : kCream,
               ),
               onPressed: () {
                 setState(() {
                   _selectedIndex = 3;
-                  _myPage.jumpToPage(3);
+
+                  Navigator.pop(context);
                 });
               },
-            ),
+            )
           ],
         ),
       ),
