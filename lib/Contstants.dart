@@ -7,5 +7,6 @@ const kWhite = Color(0xFFFFFFFF);
 const kLightOrange = Color(0xFFFFBE98);
 
 const kLightThemeText = TextStyle(color: kNavyBlue, fontSize: 15);
+const kDarkThemeText = TextStyle(color: kWhite, fontSize: 15);
 
 const double kNormalFontSize = 15;

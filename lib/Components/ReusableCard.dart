@@ -51,7 +51,7 @@ class ReusableCard extends StatelessWidget {
                     child: Row(
                       children: [
                         Icon(
-                          Icons.star,
+                          icon,
                           size: 40,
                           color: kOrange,
                         ),
@@ -59,7 +59,7 @@ class ReusableCard extends StatelessWidget {
                           width: 10,
                         ),
                         Container(
-                          height: 45,
+                          height: 50,
                           width: 3,
                           color: kOrange,
                         ),
