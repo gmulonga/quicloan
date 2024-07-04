@@ -28,10 +28,7 @@ class InputField extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(
-              color: kNavyBlue,
-              fontSize: kNormalFontSize,
-            ),
+            style: kLightThemeText,
           ),
           SizedBox(height: 8.0),
           TextField(

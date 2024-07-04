@@ -53,7 +53,7 @@ class _HomepageState extends State<Homepage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              iconSize: 30.0,
+              iconSize: 25.0,
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(
                 Icons.home,
@@ -67,7 +67,7 @@ class _HomepageState extends State<Homepage> {
               },
             ),
             IconButton(
-              iconSize: 30.0,
+              iconSize: 25.0,
               padding: EdgeInsets.only(right: 28.0),
               icon: Icon(
                 Icons.people,
@@ -81,7 +81,7 @@ class _HomepageState extends State<Homepage> {
               },
             ),
             IconButton(
-              iconSize: 30.0,
+              iconSize: 25.0,
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(
                 Icons.message,
@@ -95,7 +95,7 @@ class _HomepageState extends State<Homepage> {
               },
             ),
             IconButton(
-              iconSize: 30.0,
+              iconSize: 25.0,
               padding: EdgeInsets.only(right: 28.0),
               icon: Icon(
                 Icons.logout,
