@@ -4,7 +4,7 @@ const kCream = Color(0xFFFFFAE6);
 const kOrange = Color(0xFFFF5F00);
 const kNavyBlue = Color(0xFF002379);
 const kWhite = Color(0xFFFFFFFF);
-const kLightOrange = Color(0xFFFD9B63);
+const kLightOrange = Color(0xFFFFBE98);
 
 const kLightThemeText = TextStyle(color: kNavyBlue, fontSize: 15);
 
