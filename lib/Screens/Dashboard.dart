@@ -106,8 +106,14 @@ class _DashboardState extends State<Dashboard> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Text('Percentage paid'),
-                                Text('Days remaining')
+                                Text(
+                                  'Percentage paid',
+                                  style: TextStyle(color: kNavyBlue),
+                                ),
+                                Text(
+                                  'Days remaining',
+                                  style: TextStyle(color: kNavyBlue),
+                                )
                               ],
                             ),
                           ),
