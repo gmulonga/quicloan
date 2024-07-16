@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
 import 'package:quicloan/Screens/Dashboard.dart';
-import 'package:quicloan/Contstants.dart';
+import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Screens/Userscreen.dart';
 
 class Homepage extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicloan/Contstants.dart';
+import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/MessageHandler.dart';

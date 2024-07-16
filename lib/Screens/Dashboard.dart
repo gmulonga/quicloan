@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicloan/Contstants.dart';
+import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableCard.dart';
 import 'package:quicloan/Screens/Userscreen.dart';
 import 'package:quicloan/Components/CustomButton.dart';
@@ -133,10 +133,29 @@ class _DashboardState extends State<Dashboard> {
                           ),
                           CustomButton(
                               callBackFunction: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Userspage()),
+                                showModalBottomSheet(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return SizedBox(
+                                      height: 400,
+                                      child: Center(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: <Widget>[
+                                            const Text('Modal BottomSheet'),
+                                            ElevatedButton(
+                                              child: const Text(
+                                                  'Close BottomSheet'),
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                               label: 'Loan Details',
@@ -165,7 +184,7 @@ class _DashboardState extends State<Dashboard> {
                   label: 'Loan History',
                   icon: Icons.history,
                   onButtonPressed: () {
-                    return Loanhistory();
+                    return LoanHistory();
                   },
                 ),
               ],

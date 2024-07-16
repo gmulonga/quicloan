@@ -3,12 +3,12 @@ import 'package:quicloan/Contstants.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
 import 'package:quicloan/Screens/Userscreen.dart';
 
-class Loanhistory extends StatefulWidget {
+class LoanHistory extends StatefulWidget {
   @override
-  State<Loanhistory> createState() => _LoanhistoryState();
+  State<LoanHistory> createState() => _LoanHistoryState();
 }
 
-class _LoanhistoryState extends State<Loanhistory> {
+class _LoanHistoryState extends State<LoanHistory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

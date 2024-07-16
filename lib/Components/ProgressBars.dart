@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dashed_circular_progress_bar/dashed_circular_progress_bar.dart';
-import 'package:quicloan/Contstants.dart';
+import 'package:quicloan/Constants.dart';
 
 class ProgressBars extends StatelessWidget {
   final double percentageValue;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicloan/Contstants.dart';
+import 'package:quicloan/Constants.dart';
 import 'package:flutter/services.dart';
 
 class InputField extends StatelessWidget {
