@@ -6,6 +6,7 @@ import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/ProgressBars.dart';
 import 'package:quicloan/Screens/LoanAppliaction.dart';
 import 'package:quicloan/Screens/Payment.dart';
+import 'package:quicloan/Screens/LoanHistory.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -164,7 +165,7 @@ class _DashboardState extends State<Dashboard> {
                   label: 'Loan History',
                   icon: Icons.history,
                   onButtonPressed: () {
-                    return Userspage();
+                    return Loanhistory();
                   },
                 ),
               ],
