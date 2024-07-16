@@ -26,14 +26,11 @@ class _LoginscreenState extends State<Loginscreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  // Hero(
-                  //   tag: 'logo',
-                  //   child: Logo(
-                  //     height: 130,
-                  //     width: 130,
-                  //   ),
-                  // ),
-
+                  Image(
+                    image: AssetImage('images/logo.png'),
+                    height: 100,
+                    width: 100,
+                  ),
                   InputField(
                     label: 'Email',
                     onChanged: (value) {
