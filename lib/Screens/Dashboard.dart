@@ -25,10 +25,13 @@ class _DashboardState extends State<Dashboard> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image(
-                        image: AssetImage('images/logo.png'),
-                        height: 45,
-                        width: 45,
+                      Hero(
+                        tag: 'logo',
+                        child: Image(
+                          image: AssetImage('images/logo.png'),
+                          height: 45,
+                          width: 45,
+                        ),
                       ),
                       Icon(
                         Icons.notifications,
