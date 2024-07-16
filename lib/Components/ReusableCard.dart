@@ -53,7 +53,7 @@ class ReusableCard extends StatelessWidget {
                         Icon(
                           icon,
                           size: 40,
-                          color: kOrange,
+                          color: kSilver,
                         ),
                         SizedBox(
                           width: 10,
@@ -61,7 +61,7 @@ class ReusableCard extends StatelessWidget {
                         Container(
                           height: 50,
                           width: 3,
-                          color: kOrange,
+                          color: kSilver,
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20),

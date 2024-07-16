@@ -45,7 +45,7 @@ class _HomepageState extends State<Homepage> {
         shadowColor: kOrange,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         height: 60,
-        color: kOrange,
+        color: kNavyBlue,
         shape: const CircularNotchedRectangle(),
         notchMargin: 5,
         child: Row(
@@ -57,7 +57,7 @@ class _HomepageState extends State<Homepage> {
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(
                 Icons.home,
-                color: _selectedIndex == 0 ? kNavyBlue : kCream,
+                color: _selectedIndex == 0 ? kOrange : kCream,
               ),
               onPressed: () {
                 setState(() {
@@ -71,7 +71,7 @@ class _HomepageState extends State<Homepage> {
               padding: EdgeInsets.only(right: 28.0),
               icon: Icon(
                 Icons.people,
-                color: _selectedIndex == 1 ? kNavyBlue : kCream,
+                color: _selectedIndex == 1 ? kOrange : kCream,
               ),
               onPressed: () {
                 setState(() {
@@ -85,7 +85,7 @@ class _HomepageState extends State<Homepage> {
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(
                 Icons.message,
-                color: _selectedIndex == 2 ? kNavyBlue : kCream,
+                color: _selectedIndex == 2 ? kOrange : kCream,
               ),
               onPressed: () {
                 setState(() {
@@ -99,12 +99,11 @@ class _HomepageState extends State<Homepage> {
               padding: EdgeInsets.only(right: 28.0),
               icon: Icon(
                 Icons.logout,
-                color: _selectedIndex == 3 ? kNavyBlue : kCream,
+                color: _selectedIndex == 3 ? kOrange : kCream,
               ),
               onPressed: () {
                 setState(() {
                   _selectedIndex = 3;
-
                   Navigator.pop(context);
                 });
               },

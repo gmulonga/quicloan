@@ -38,7 +38,7 @@ class ProgressBars extends StatelessWidget {
                 builder: (_, double value, __) => Text(
                   '${value.toInt()}%',
                   style: TextStyle(
-                    color: kOrange,
+                    color: kCream,
                     fontWeight: FontWeight.w300,
                     fontSize: 20,
                   ),
@@ -73,15 +73,8 @@ class ProgressBars extends StatelessWidget {
                     Text(
                       '${daysProgress.toInt()}',
                       style: TextStyle(
-                        color: kOrange,
+                        color: kCream,
                         fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      'Days',
-                      style: TextStyle(
-                        color: kOrange,
-                        fontSize: 15,
                       ),
                     ),
                   ],

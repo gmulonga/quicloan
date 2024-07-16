@@ -21,13 +21,14 @@ class _DashboardState extends State<Dashboard> {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 20, left: 15, right: 15),
+                  padding: EdgeInsets.only(top: 10, left: 15, right: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.bolt,
-                        color: kNavyBlue,
+                      Image(
+                        image: AssetImage('images/logo.png'),
+                        height: 45,
+                        width: 45,
                       ),
                       Icon(
                         Icons.notifications,
@@ -37,7 +38,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   child: Row(
                     children: [
                       Icon(
@@ -60,7 +61,7 @@ class _DashboardState extends State<Dashboard> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: kWhite,
+                      color: kNavyBlue,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
@@ -78,7 +79,7 @@ class _DashboardState extends State<Dashboard> {
                           Text(
                             'Outstanding Loan',
                             style: TextStyle(
-                              color: kNavyBlue,
+                              color: kCream,
                               fontSize: 20,
                             ),
                           ),
@@ -86,7 +87,7 @@ class _DashboardState extends State<Dashboard> {
                             'Ksh:',
                             style: TextStyle(
                               fontSize: 20,
-                              color: kNavyBlue,
+                              color: kCream,
                             ),
                           ),
                           Row(
@@ -96,8 +97,7 @@ class _DashboardState extends State<Dashboard> {
                               ),
                               Text(
                                 '20,000',
-                                style:
-                                    TextStyle(color: kNavyBlue, fontSize: 35),
+                                style: TextStyle(color: kCream, fontSize: 35),
                               )
                             ],
                           ),
@@ -108,11 +108,11 @@ class _DashboardState extends State<Dashboard> {
                               children: [
                                 Text(
                                   'Percentage paid',
-                                  style: TextStyle(color: kNavyBlue),
+                                  style: TextStyle(color: kCream),
                                 ),
                                 Text(
                                   'Days remaining',
-                                  style: TextStyle(color: kNavyBlue),
+                                  style: TextStyle(color: kCream),
                                 )
                               ],
                             ),
