@@ -25,6 +25,11 @@ class _LoanApplicationState extends State<LoanApplication> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Icon(
+                    Icons.file_copy,
+                    color: kSilver,
+                    size: 100,
+                  ),
                   InputField(
                     label: 'Enter Amount',
                     integerOnly:

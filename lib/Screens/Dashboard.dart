@@ -5,6 +5,7 @@ import 'package:quicloan/Screens/Userscreen.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/ProgressBars.dart';
 import 'package:quicloan/Screens/LoanAppliaction.dart';
+import 'package:quicloan/Screens/Payment.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -147,7 +148,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 ReusableCard(
                   label: 'Apply For a Loan',
-                  icon: Icons.file_open,
+                  icon: Icons.file_copy,
                   onButtonPressed: () {
                     return LoanApplication();
                   },
@@ -156,7 +157,7 @@ class _DashboardState extends State<Dashboard> {
                   label: 'Make Payment',
                   icon: Icons.star,
                   onButtonPressed: () {
-                    return Userspage();
+                    return PaymentScreen();
                   },
                 ),
                 ReusableCard(
