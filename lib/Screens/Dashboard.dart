@@ -14,6 +14,10 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  double percentage = 50;
+  double remaining_days = 7;
+  double maxDays = 60;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,60 +111,14 @@ class _DashboardState extends State<Dashboard> {
                               )
                             ],
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(vertical: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text(
-                                  'Percentage paid',
-                                  style: TextStyle(color: kCream),
-                                ),
-                                Text(
-                                  'Days remaining',
-                                  style: TextStyle(color: kCream),
-                                )
-                              ],
-                            ),
-                          ),
                           ProgressBars(
-                            percentageValue: 75,
-                            daysProgress: 15,
-                            maxDays: 30,
+                            percentageValue: percentage,
+                            daysProgress: remaining_days,
+                            maxDays: maxDays,
                           ),
                           SizedBox(
                             height: 10,
                           ),
-                          CustomButton(
-                              callBackFunction: () {
-                                showModalBottomSheet(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return SizedBox(
-                                      height: 400,
-                                      child: Center(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: <Widget>[
-                                            const Text('Modal BottomSheet'),
-                                            ElevatedButton(
-                                              child: const Text(
-                                                  'Close BottomSheet'),
-                                              onPressed: () =>
-                                                  Navigator.pop(context),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                );
-                              },
-                              label: 'Loan Details',
-                              bgColor: kOrange,
-                              txtColor: kCream)
                         ],
                       ),
                     ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:dashed_circular_progress_bar/dashed_circular_progress_bar.dart';
 import 'package:quicloan/Constants.dart';
 
 class ProgressBars extends StatelessWidget {
@@ -15,72 +14,37 @@ class ProgressBars extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SizedBox(
-          width: 80,
-          height: 80,
-          child: DashedCircularProgressBar.aspectRatio(
-            aspectRatio: 1, // width ÷ height
-            valueNotifier: ValueNotifier(percentageValue),
-            progress: percentageValue,
-            maxProgress: 100,
-            corners: StrokeCap.butt,
-            foregroundColor: kOrange,
-            backgroundColor: kCream,
-            foregroundStrokeWidth: 7,
-            backgroundStrokeWidth: 7,
-            animation: true,
-            child: Center(
-              child: ValueListenableBuilder(
-                valueListenable: ValueNotifier(percentageValue),
-                builder: (_, double value, __) => Text(
-                  '${value.toInt()}%',
-                  style: TextStyle(
-                    color: kCream,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-            ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: Text(
+            'Percentage Paid ${percentageValue}%',
+            style: TextStyle(color: kCream),
           ),
         ),
         SizedBox(
-          width: 80,
-          height: 80,
-          child: DashedCircularProgressBar.aspectRatio(
-            aspectRatio: 1,
-            valueNotifier: ValueNotifier(daysProgress / maxDays * 100),
-            progress: daysProgress,
-            maxProgress: maxDays,
-            startAngle: 225,
-            sweepAngle: 270,
-            foregroundColor: kOrange,
+          height: 10,
+          child: LinearProgressIndicator(
             backgroundColor: kCream,
-            foregroundStrokeWidth: 7,
-            backgroundStrokeWidth: 7,
-            animation: true,
-            seekSize: 6,
-            seekColor: kWhite,
-            child: Center(
-              child: ValueListenableBuilder(
-                valueListenable: ValueNotifier(daysProgress / maxDays * 100),
-                builder: (_, double value, __) => Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      '${daysProgress.toInt()}',
-                      style: TextStyle(
-                        color: kCream,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            valueColor: AlwaysStoppedAnimation<Color>(kOrange),
+            value: percentageValue / 100,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: Text(
+            '${daysProgress.toInt()} Days remaining',
+            style: TextStyle(color: kCream),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+          child: LinearProgressIndicator(
+            backgroundColor: kCream,
+            valueColor: AlwaysStoppedAnimation<Color>(kOrange),
+            value: daysProgress / maxDays,
           ),
         ),
       ],
