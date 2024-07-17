@@ -12,6 +12,13 @@ class _LoanHistoryState extends State<LoanHistory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Loan History',
+          style: TextStyle(color: kCream),
+        ),
+        backgroundColor: kNavyBlue,
+      ),
       backgroundColor: kCream,
       body: SafeArea(
         child: ListView(

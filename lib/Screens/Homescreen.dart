@@ -3,6 +3,8 @@ import 'package:animations/animations.dart';
 import 'package:quicloan/Screens/Dashboard.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Screens/Userscreen.dart';
+import 'package:quicloan/Screens/Settings.dart';
+import 'package:quicloan/Screens/SupportScreen.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -22,7 +24,7 @@ class _HomepageState extends State<Homepage> {
         closedColor: kOrange,
         transitionType: ContainerTransitionType.fade,
         openBuilder: (BuildContext context, VoidCallback _) {
-          return Userspage();
+          return Supportscreen();
         },
         closedElevation: 6.0,
         closedShape: const RoundedRectangleBorder(
@@ -33,7 +35,7 @@ class _HomepageState extends State<Homepage> {
             onPressed: openContainer,
             backgroundColor: kOrange,
             child: Icon(
-              Icons.menu,
+              Icons.chat,
               color: kCream,
             ),
           );
@@ -84,7 +86,7 @@ class _HomepageState extends State<Homepage> {
               iconSize: 25.0,
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(
-                Icons.message,
+                Icons.settings,
                 color: _selectedIndex == 2 ? kOrange : kCream,
               ),
               onPressed: () {
@@ -116,8 +118,7 @@ class _HomepageState extends State<Homepage> {
         children: <Widget>[
           Dashboard(),
           Userspage(),
-          Userspage(),
-          Userspage(),
+          Settings(),
         ],
         physics: NeverScrollableScrollPhysics(),
       ),
