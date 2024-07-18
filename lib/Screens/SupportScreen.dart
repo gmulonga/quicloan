@@ -12,7 +12,7 @@ class _SupportscreenState extends State<Supportscreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Support',
+          'Customer Support',
           style: TextStyle(color: kCream),
         ),
         backgroundColor: kNavyBlue,
@@ -35,7 +35,7 @@ class _SupportscreenState extends State<Supportscreen> {
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        'Sample text box',
+                        'Customer support',
                         style: kDarkThemeText,
                       ),
                     )),
