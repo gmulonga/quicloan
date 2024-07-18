@@ -11,68 +11,54 @@ class ReusableTile extends StatelessWidget {
 
   final String date;
   final String status;
-  final Widget Function() onButtonPressed;
+  final void Function() onButtonPressed;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: OpenContainer(
-        closedColor: kWhite,
-        transitionType: ContainerTransitionType.fade,
-        openBuilder: (BuildContext context, VoidCallback _) {
-          return onButtonPressed() ?? Container();
-        },
-        closedElevation: 6.0,
-        closedShape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(20),
-          ),
-        ),
-        closedBuilder: (BuildContext context, VoidCallback openContainer) {
-          return InkWell(
-            onTap: openContainer,
-            child: Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: kWhite,
-                        blurRadius: 10.0,
-                        offset: Offset(0, 1),
+      padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: onButtonPressed,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: kNavyBlue,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                      child: Text(
+                        date,
+                        style: kDarkThemeText,
                       ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                          child: Text(
-                            date,
-                            style: kLightThemeText,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(
-                            status,
-                            style: kLightThemeText,
-                          ),
-                        ),
-                      ],
                     ),
-                  ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      child: Text(
+                        status,
+                        style: kDarkThemeText,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          );
-        },
+          )
+        ],
       ),
     );
   }

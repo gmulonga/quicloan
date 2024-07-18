@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
 import 'package:quicloan/Screens/Userscreen.dart';
+import 'package:quicloan/Components/InfoDialog.dart';
 
 class LoanHistory extends StatefulWidget {
   @override
@@ -25,9 +26,23 @@ class _LoanHistoryState extends State<LoanHistory> {
           children: [
             ReusableTile(
               date: '10/07/2024',
-              status: 'pending',
+              status: 'Pending',
               onButtonPressed: () {
-                return Userspage();
+                showLoanDetailsDialog(context, '2,000', '15%', '60 days');
+              },
+            ),
+            ReusableTile(
+              date: '10/07/2024',
+              status: 'Active',
+              onButtonPressed: () {
+                showLoanDetailsDialog(context, '5,000', '15%', '30 days');
+              },
+            ),
+            ReusableTile(
+              date: '10/07/2024',
+              status: 'Completed',
+              onButtonPressed: () {
+                showLoanDetailsDialog(context, '8,000', '15%', '40 days');
               },
             ),
           ],
