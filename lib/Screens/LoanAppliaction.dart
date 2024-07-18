@@ -16,6 +16,13 @@ class _LoanApplicationState extends State<LoanApplication> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Apply For Loan',
+          style: TextStyle(color: kCream),
+        ),
+        backgroundColor: kNavyBlue,
+      ),
       backgroundColor: kCream,
       body: SafeArea(
         child: Center(
@@ -25,10 +32,13 @@ class _LoanApplicationState extends State<LoanApplication> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Icon(
-                    Icons.file_copy,
-                    color: kSilver,
-                    size: 100,
+                  Image(
+                    image: AssetImage('images/logo.png'),
+                    height: 100,
+                    width: 100,
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   InputField(
                     label: 'Enter Amount',

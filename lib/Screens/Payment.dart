@@ -16,6 +16,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Payment',
+          style: TextStyle(color: kCream),
+        ),
+        backgroundColor: kNavyBlue,
+      ),
       backgroundColor: kCream,
       body: Center(
         child: ListView(
@@ -24,10 +31,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Icon(
-                  Icons.star,
-                  size: 100,
-                  color: kSilver,
+                Image(
+                  image: AssetImage('images/logo.png'),
+                  height: 100,
+                  width: 100,
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 InputField(
                   label: 'Enter Amount',
