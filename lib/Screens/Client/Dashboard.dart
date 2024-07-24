@@ -8,6 +8,8 @@ import 'package:quicloan/Screens/Client/LoanAppliaction.dart';
 import 'package:quicloan/Screens/Client/Payment.dart';
 import 'package:quicloan/Screens/Client/LoanHistory.dart';
 
+import 'package:quicloan/Screens/Admin/AdminDashboard.dart';
+
 class Dashboard extends StatefulWidget {
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -128,7 +130,7 @@ class _DashboardState extends State<Dashboard> {
                   label: 'Apply For a Loan',
                   icon: Icons.file_copy,
                   onButtonPressed: () {
-                    return LoanApplication();
+                    return Admindashboard();
                   },
                 ),
                 ReusableCard(
