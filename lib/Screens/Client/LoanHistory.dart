@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
-import 'package:quicloan/Screens/Userscreen.dart';
+import 'package:quicloan/Screens/Client/Userscreen.dart';
 import 'package:quicloan/Components/InfoDialog.dart';
 
 class LoanHistory extends StatefulWidget {

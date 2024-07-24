@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
-import 'package:quicloan/Screens/Dashboard.dart';
+import 'package:quicloan/Screens/Client/Dashboard.dart';
 import 'package:quicloan/Constants.dart';
-import 'package:quicloan/Screens/Userscreen.dart';
+import 'package:quicloan/Screens/Client/Userscreen.dart';
 import 'package:quicloan/Screens/Settings.dart';
-import 'package:quicloan/Screens/SupportScreen.dart';
+import 'package:quicloan/Screens/Client/SupportScreen.dart';
 
 class Homepage extends StatefulWidget {
   @override
