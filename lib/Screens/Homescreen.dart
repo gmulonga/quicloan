@@ -5,6 +5,7 @@ import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Screens/Client/Userscreen.dart';
 import 'package:quicloan/Screens/Settings.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
+import 'package:quicloan/Screens/Admin/AdminDashboard.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   int _selectedIndex = 0;
+  bool isAdmin = true;
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +118,7 @@ class _HomepageState extends State<Homepage> {
       body: PageView(
         controller: _myPage,
         children: <Widget>[
-          Dashboard(),
+          isAdmin ? Admindashboard() : Dashboard(),
           Userspage(),
           Settings(),
         ],
