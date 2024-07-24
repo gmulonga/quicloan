@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableContainer.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
+import 'package:quicloan/Screens/Admin/RegisterScreen.dart';
 
 class Admindashboard extends StatefulWidget {
   @override
@@ -74,7 +75,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                           child: ReusableContainer(
                               label: "User Management",
                               onButtonPressed: () {
-                                return Supportscreen();
+                                return Registerscreen();
                               },
                               icon: Icons.add),
                         ),

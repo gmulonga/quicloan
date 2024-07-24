@@ -29,6 +29,9 @@ dependencies:
   animations: ^2.0.10
   cupertino_icons: ^1.0.6
   dashed_circular_progress_bar: ^0.0.6
+  firebase_core: ^3.2.0
+  firebase_auth: ^5.1.2
+  cloud_firestore: ^5.1.0
 
 
 dev_dependencies:

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "368285110662",
+    "project_id": "quicloan-8f7ef",
+    "storage_bucket": "quicloan-8f7ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368285110662:android:75020413286e86d18fdc07",
+        "android_client_info": {
+          "package_name": "com.gadson.quicloan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWBt9TR-mOGNs2beKS63IhGxub3YcREww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
