@@ -3,6 +3,7 @@ import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableContainer.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
 import 'package:quicloan/Screens/Admin/RegisterScreen.dart';
+import 'package:quicloan/Screens/Admin/LoanManagement.dart';
 
 class Admindashboard extends StatefulWidget {
   @override
@@ -75,7 +76,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                           child: ReusableContainer(
                               label: "User Management",
                               onButtonPressed: () {
-                                return Registerscreen();
+                                return LoanManagement();
                               },
                               icon: Icons.add),
                         ),
@@ -87,7 +88,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                           child: ReusableContainer(
                               label: "Loan management",
                               onButtonPressed: () {
-                                return Supportscreen();
+                                return LoanManagement();
                               },
                               icon: Icons.add),
                         ),
