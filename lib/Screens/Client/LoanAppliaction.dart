@@ -3,6 +3,8 @@ import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/MessageHandler.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class LoanApplication extends StatefulWidget {
   @override
@@ -15,6 +17,7 @@ class _LoanApplicationState extends State<LoanApplication> {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -23,7 +26,7 @@ class _LoanApplicationState extends State<LoanApplication> {
         ),
         backgroundColor: kNavyBlue,
       ),
-      backgroundColor: kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
       body: SafeArea(
         child: Center(
           child: ListView(
@@ -59,18 +62,21 @@ class _LoanApplicationState extends State<LoanApplication> {
                     padding: EdgeInsets.only(top: 10, left: 15),
                     child: Text(
                       'Interest rate: 15%',
-                      style: kLightThemeText,
+                      style: TextStyle(
+                          color: themeNotifier.isDark ? kWhite : kNavyBlue),
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 10, left: 15),
                     child: Text(
                       'Loan Payment duration: ${duration.round()} Days',
-                      style: kLightThemeText,
+                      style: TextStyle(
+                          color: themeNotifier.isDark ? kWhite : kNavyBlue),
                     ),
                   ),
                   Slider(
                     activeColor: kOrange,
+                    inactiveColor: themeNotifier.isDark ? kWhite : kNavyBlue,
                     value: duration,
                     min: 0,
                     max: 60,
