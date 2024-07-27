@@ -14,13 +14,17 @@ class _SettingsState extends State<Settings> {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
     return Scaffold(
-      // backgroundColor: themeNotifier.isDark ? kNavyBlue : kCream,
+      appBar: AppBar(
+        title: Text(
+          'Loan History',
+          style: TextStyle(color: kCream),
+        ),
+        backgroundColor: kNavyBlue,
+      ),
+      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
       body: SafeArea(
         child: ListView(
           children: [
-            Center(
-              child: Text('Settings screen'),
-            ),
             SwitchListTile(
               title: Text('Dark Theme'),
               value: themeNotifier.isDark,

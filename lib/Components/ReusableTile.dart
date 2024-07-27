@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:animations/animations.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class ReusableTile extends StatelessWidget {
   ReusableTile({
@@ -25,14 +27,6 @@ class ReusableTile extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: kNavyBlue,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
               ),
               child: Padding(
                 padding: EdgeInsets.all(15),

@@ -3,6 +3,8 @@ import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/MessageHandler.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class PaymentScreen extends StatefulWidget {
   @override
@@ -15,6 +17,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -23,7 +26,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         ),
         backgroundColor: kNavyBlue,
       ),
-      backgroundColor: kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
       body: Center(
         child: ListView(
           shrinkWrap: true,

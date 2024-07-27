@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
 import 'package:quicloan/Components/InfoDialog.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class LoanHistory extends StatefulWidget {
   @override
@@ -11,6 +13,7 @@ class LoanHistory extends StatefulWidget {
 class _LoanHistoryState extends State<LoanHistory> {
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -19,7 +22,7 @@ class _LoanHistoryState extends State<LoanHistory> {
         ),
         backgroundColor: kNavyBlue,
       ),
-      backgroundColor: kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
       body: SafeArea(
         child: ListView(
           children: [
