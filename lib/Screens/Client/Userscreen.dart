@@ -26,10 +26,10 @@ class _UserspageState extends State<Userspage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Icon(
-                  Icons.person_2_sharp,
-                  size: 100,
-                  color: kSilver,
+                Image(
+                  image: AssetImage('images/logo.png'),
+                  height: 100,
+                  width: 100,
                 ),
                 InputField(
                   label: 'Name',
