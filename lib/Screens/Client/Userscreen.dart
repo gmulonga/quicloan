@@ -3,6 +3,8 @@ import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/MessageHandler.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class Userspage extends StatefulWidget {
   @override
@@ -16,8 +18,9 @@ class _UserspageState extends State<Userspage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
-      backgroundColor: kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
       body: SafeArea(
           child: Center(
         child: ListView(
