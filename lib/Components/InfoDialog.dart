@@ -27,7 +27,7 @@ void showLoanDetailsDialog(BuildContext context, String loanAmount,
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Close', style: kDarkThemeText),
+              child: Text('Close', style: kDarkThemeText),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -36,7 +36,7 @@ void showLoanDetailsDialog(BuildContext context, String loanAmount,
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Delete', style: TextStyle(color: Colors.red)),
+              child: Text('Delete', style: TextStyle(color: kOrange)),
               onPressed: () {
                 Navigator.of(context).pop();
               },

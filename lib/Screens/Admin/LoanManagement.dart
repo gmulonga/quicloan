@@ -3,6 +3,8 @@ import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/MessageHandler.dart';
 import 'package:quicloan/Components/CustomButton.dart';
+import 'package:quicloan/Components/ReusableTile.dart';
+import 'package:quicloan/Components/InfoDialog.dart';
 
 class LoanManagement extends StatefulWidget {
   @override
@@ -16,7 +18,7 @@ class _LoanManagementState extends State<LoanManagement> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       initialIndex: 0,
       child: Scaffold(
         backgroundColor: kCream,
@@ -36,9 +38,6 @@ class _LoanManagementState extends State<LoanManagement> {
               ),
               Tab(
                 text: 'Requests',
-              ),
-              Tab(
-                text: 'History',
               ),
             ],
           ),
@@ -83,11 +82,23 @@ class _LoanManagementState extends State<LoanManagement> {
                 )
               ],
             ),
-            Center(
-              child: Text("Requests"),
-            ),
-            Center(
-              child: Text("History"),
+            Column(
+              children: [
+                ReusableTile(
+                  label: 'user1@gmail.com',
+                  status: 'Pending',
+                  onButtonPressed: () {
+                    showLoanDetailsDialog(context, '2,000', '15%', '60 days');
+                  },
+                ),
+                ReusableTile(
+                  label: 'user2@gmail.com',
+                  status: 'Pending',
+                  onButtonPressed: () {
+                    showLoanDetailsDialog(context, '2,000', '15%', '60 days');
+                  },
+                ),
+              ],
             ),
           ],
         ),

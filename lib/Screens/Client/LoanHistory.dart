@@ -25,21 +25,21 @@ class _LoanHistoryState extends State<LoanHistory> {
         child: ListView(
           children: [
             ReusableTile(
-              date: '10/07/2024',
+              label: '10/07/2024',
               status: 'Pending',
               onButtonPressed: () {
                 showLoanDetailsDialog(context, '2,000', '15%', '60 days');
               },
             ),
             ReusableTile(
-              date: '10/07/2024',
+              label: '10/07/2024',
               status: 'Active',
               onButtonPressed: () {
                 showLoanDetailsDialog(context, '5,000', '15%', '30 days');
               },
             ),
             ReusableTile(
-              date: '10/07/2024',
+              label: '10/07/2024',
               status: 'Completed',
               onButtonPressed: () {
                 showLoanDetailsDialog(context, '8,000', '15%', '40 days');

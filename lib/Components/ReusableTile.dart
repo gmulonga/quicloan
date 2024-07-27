@@ -4,12 +4,12 @@ import 'package:animations/animations.dart';
 
 class ReusableTile extends StatelessWidget {
   ReusableTile({
-    required this.date,
+    required this.label,
     required this.status,
     required this.onButtonPressed,
   });
 
-  final String date;
+  final String label;
   final String status;
   final void Function() onButtonPressed;
 
@@ -42,7 +42,7 @@ class ReusableTile extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Text(
-                        date,
+                        label,
                         style: kDarkThemeText,
                       ),
                     ),
