@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
+import 'package:quicloan/Components/InputField.dart';
+import 'package:quicloan/Components/MessageHandler.dart';
+import 'package:quicloan/Components/CustomButton.dart';
 
 class LoanManagement extends StatefulWidget {
   @override
@@ -7,6 +10,9 @@ class LoanManagement extends StatefulWidget {
 }
 
 class _LoanManagementState extends State<LoanManagement> {
+  int interestRate = 0;
+  int duration = 0;
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -26,7 +32,7 @@ class _LoanManagementState extends State<LoanManagement> {
             unselectedLabelColor: kCream,
             tabs: <Widget>[
               Tab(
-                text: 'Loans',
+                text: 'Loan Limits',
               ),
               Tab(
                 text: 'Requests',
@@ -37,10 +43,45 @@ class _LoanManagementState extends State<LoanManagement> {
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: <Widget>[
-            Center(
-              child: Text("Loans"),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                InputField(
+                  label: 'Interest Rate',
+                  onChanged: (value) {
+                    setState(() {
+                      interestRate = int.tryParse(value) ?? 0;
+                    });
+                  },
+                ),
+                InputField(
+                  label: 'Maximum Duration',
+                  onChanged: (value) {
+                    setState(() {
+                      duration = int.tryParse(value) ?? 0;
+                    });
+                  },
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  child: CustomButton(
+                    txtColor: kCream,
+                    bgColor: kOrange,
+                    callBackFunction: () {
+                      setState(() {
+                        MessageHandler.showMessage(
+                            context, 'You have sucesfully updated', kOrange);
+                      });
+                    },
+                    label: 'Update',
+                  ),
+                )
+              ],
             ),
             Center(
               child: Text("Requests"),
