@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
-import 'package:animations/animations.dart';
+
+class DialogButton {
+  final String label;
+  final VoidCallback onPressed;
+  final TextStyle? style;
+
+  DialogButton({
+    required this.label,
+    required this.onPressed,
+    this.style,
+  });
+}
 
 void showLoanDetailsDialog(BuildContext context, String loanAmount,
-    String interestRate, String duration) {
+    String interestRate, String duration, List<DialogButton> buttons) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -22,26 +33,15 @@ void showLoanDetailsDialog(BuildContext context, String loanAmount,
             'Interest Rate: $interestRate\n'
             'Duration: $duration',
           ),
-          actions: <Widget>[
-            TextButton(
+          actions: buttons.map((button) {
+            return TextButton(
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: Text('Close', style: kDarkThemeText),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              style: TextButton.styleFrom(
-                textStyle: Theme.of(context).textTheme.labelLarge,
-              ),
-              child: Text('Delete', style: TextStyle(color: kOrange)),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
+              child: Text(button.label, style: button.style),
+              onPressed: button.onPressed,
+            );
+          }).toList(),
         ),
       );
     },

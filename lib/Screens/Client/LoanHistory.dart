@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
-import 'package:quicloan/Screens/Client/Userscreen.dart';
 import 'package:quicloan/Components/InfoDialog.dart';
 
 class LoanHistory extends StatefulWidget {
@@ -28,21 +27,83 @@ class _LoanHistoryState extends State<LoanHistory> {
               label: '10/07/2024',
               status: 'Pending',
               onButtonPressed: () {
-                showLoanDetailsDialog(context, '2,000', '15%', '60 days');
+                showLoanDetailsDialog(context, '2,000', '15%', '60 days', [
+                  DialogButton(
+                    label: 'Close',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    style: kDarkThemeText,
+                  ),
+                  DialogButton(
+                    label: 'Delete',
+                    onPressed: () {
+                      // Add delete functionality here
+                      Navigator.of(context).pop();
+                    },
+                    style: TextStyle(color: kOrange),
+                  ),
+                  DialogButton(
+                    label: 'Approve',
+                    onPressed: () {
+                      // Add approve functionality here
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  DialogButton(
+                    label: 'Deny',
+                    onPressed: () {
+                      // Add deny functionality here
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ]);
               },
             ),
             ReusableTile(
               label: '10/07/2024',
               status: 'Active',
               onButtonPressed: () {
-                showLoanDetailsDialog(context, '5,000', '15%', '30 days');
+                showLoanDetailsDialog(context, '5,000', '15%', '30 days', [
+                  DialogButton(
+                    label: 'Close',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    style: kDarkThemeText,
+                  ),
+                  DialogButton(
+                    label: 'Delete',
+                    onPressed: () {
+                      // Add delete functionality here
+                      Navigator.of(context).pop();
+                    },
+                    style: TextStyle(color: kOrange),
+                  ),
+                ]);
               },
             ),
             ReusableTile(
               label: '10/07/2024',
               status: 'Completed',
               onButtonPressed: () {
-                showLoanDetailsDialog(context, '8,000', '15%', '40 days');
+                showLoanDetailsDialog(context, '8,000', '15%', '40 days', [
+                  DialogButton(
+                    label: 'Close',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    style: kDarkThemeText,
+                  ),
+                  DialogButton(
+                    label: 'Delete',
+                    onPressed: () {
+                      // Add delete functionality here
+                      Navigator.of(context).pop();
+                    },
+                    style: TextStyle(color: kOrange),
+                  ),
+                ]);
               },
             ),
           ],

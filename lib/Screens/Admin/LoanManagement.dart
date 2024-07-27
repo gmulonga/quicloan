@@ -85,17 +85,49 @@ class _LoanManagementState extends State<LoanManagement> {
             Column(
               children: [
                 ReusableTile(
-                  label: 'user1@gmail.com',
+                  label: 'Jane Doe',
                   status: 'Pending',
                   onButtonPressed: () {
-                    showLoanDetailsDialog(context, '2,000', '15%', '60 days');
+                    showLoanDetailsDialog(context, '8,000', '15%', '4 days', [
+                      DialogButton(
+                        label: 'Approve',
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        style: kDarkThemeText,
+                      ),
+                      DialogButton(
+                        label: 'Deny',
+                        onPressed: () {
+                          // Add delete functionality here
+                          Navigator.of(context).pop();
+                        },
+                        style: TextStyle(color: kOrange),
+                      ),
+                    ]);
                   },
                 ),
                 ReusableTile(
-                  label: 'user2@gmail.com',
+                  label: 'John Doe',
                   status: 'Pending',
                   onButtonPressed: () {
-                    showLoanDetailsDialog(context, '2,000', '15%', '60 days');
+                    showLoanDetailsDialog(context, '8,000', '15%', '40 days', [
+                      DialogButton(
+                        label: 'Approve',
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        style: kDarkThemeText,
+                      ),
+                      DialogButton(
+                        label: 'Deny',
+                        onPressed: () {
+                          // Add delete functionality here
+                          Navigator.of(context).pop();
+                        },
+                        style: TextStyle(color: kOrange),
+                      ),
+                    ]);
                   },
                 ),
               ],
