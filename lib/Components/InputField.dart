@@ -37,6 +37,8 @@ class InputField extends StatelessWidget {
           TextField(
             obscureText: password,
             onChanged: onChanged,
+            style:
+                TextStyle(color: themeNotifier.isDark ? kNavyBlue : kNavyBlue),
             inputFormatters:
                 integerOnly ? [FilteringTextInputFormatter.digitsOnly] : null,
             decoration: InputDecoration(

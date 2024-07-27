@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:animations/animations.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class ReusableCard extends StatelessWidget {
   ReusableCard({
@@ -15,14 +17,14 @@ class ReusableCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: OpenContainer(
-        closedColor: kWhite,
+        closedColor: themeNotifier.isDark ? kNavyBlue : kWhite,
         transitionType: ContainerTransitionType.fade,
         openBuilder: (BuildContext context, VoidCallback _) {
-          return onButtonPressed() ??
-              Container(); // Return the result of onButtonPressed, or an empty container if null
+          return onButtonPressed() ?? Container();
         },
         closedElevation: 6.0,
         closedShape: const RoundedRectangleBorder(
@@ -40,7 +42,7 @@ class ReusableCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: kWhite,
+                        color: themeNotifier.isDark ? kNavyBlue : kWhite,
                         blurRadius: 10.0,
                         offset: Offset(0, 1),
                       ),
@@ -67,7 +69,9 @@ class ReusableCard extends StatelessWidget {
                           padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
                             label,
-                            style: kLightThemeText,
+                            style: TextStyle(
+                                color:
+                                    themeNotifier.isDark ? kWhite : kNavyBlue),
                           ),
                         ),
                       ],
