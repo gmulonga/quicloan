@@ -4,6 +4,8 @@ import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Screens/Homescreen.dart';
 import 'package:quicloan/Screens/Loginscreen.dart';
+import 'package:provider/provider.dart';
+import 'package:quicloan/theme_notifier.dart';
 
 class Loginscreen extends StatefulWidget {
   @override
@@ -16,8 +18,9 @@ class _LoginscreenState extends State<Loginscreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
-      backgroundColor: kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
       body: SafeArea(
         child: Center(
           child: ListView(
@@ -79,7 +82,7 @@ class _LoginscreenState extends State<Loginscreen> {
                         child: Text(
                           'Forgot Password',
                           style: TextStyle(
-                            color: kNavyBlue,
+                            color: themeNotifier.isDark ? kCream : kNavyBlue,
                             decoration: TextDecoration.underline,
                           ),
                         ),

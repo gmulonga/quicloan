@@ -6,6 +6,7 @@ import 'package:quicloan/Screens/Client/Userscreen.dart';
 import 'package:quicloan/Screens/Settings.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
 import 'package:quicloan/Screens/Admin/AdminDashboard.dart';
+import 'package:quicloan/theme_notifier.dart';
 
 class Homepage extends StatefulWidget {
   @override

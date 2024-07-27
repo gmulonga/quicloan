@@ -7,6 +7,8 @@ import 'package:quicloan/Components/ProgressBars.dart';
 import 'package:quicloan/Screens/Client/LoanAppliaction.dart';
 import 'package:quicloan/Screens/Client/Payment.dart';
 import 'package:quicloan/Screens/Client/LoanHistory.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -20,8 +22,9 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
-      backgroundColor: kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
       body: SafeArea(
         child: ListView(
           children: [
@@ -42,7 +45,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       Icon(
                         Icons.notifications,
-                        color: kNavyBlue,
+                        color: themeNotifier.isDark ? kSilver : kNavyBlue,
                       )
                     ],
                   ),
@@ -53,14 +56,18 @@ class _DashboardState extends State<Dashboard> {
                     children: [
                       Icon(
                         Icons.person,
-                        color: kNavyBlue,
+                        color: themeNotifier.isDark ? kSilver : kNavyBlue,
                       ),
                       SizedBox(
                         width: 10,
                       ),
                       Text(
                         'Jane Doe',
-                        style: kLightThemeText,
+                        style: TextStyle(
+                          color: themeNotifier.isDark ? kSilver : kNavyBlue,
+                        ),
+
+                        // style: kLightThemeText,
                       ),
                     ],
                   ),
@@ -72,14 +79,6 @@ class _DashboardState extends State<Dashboard> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: kNavyBlue,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
                     ),
                     child: Padding(
                       padding: EdgeInsets.all(15),

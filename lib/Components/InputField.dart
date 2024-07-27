@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:quicloan/theme_notifier.dart';
 
 class InputField extends StatelessWidget {
   InputField({
@@ -21,6 +23,7 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       child: Column(
@@ -28,7 +31,7 @@ class InputField extends StatelessWidget {
         children: [
           Text(
             label,
-            style: kLightThemeText,
+            style: TextStyle(color: themeNotifier.isDark ? kWhite : kNavyBlue),
           ),
           SizedBox(height: 8.0),
           TextField(
