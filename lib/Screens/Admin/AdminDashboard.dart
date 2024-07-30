@@ -5,6 +5,8 @@ import 'package:quicloan/Screens/Client/SupportScreen.dart';
 import 'package:quicloan/Screens/Admin/RegisterScreen.dart';
 import 'package:quicloan/Screens/Admin/LoanManagement.dart';
 import 'package:quicloan/Screens/Admin/UserManagement.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class Admindashboard extends StatefulWidget {
   @override
@@ -14,8 +16,9 @@ class Admindashboard extends StatefulWidget {
 class _AdmindashboardState extends State<Admindashboard> {
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
-        backgroundColor: kCream,
+        backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
         body: SafeArea(
           child: ListView(
             children: [
@@ -36,7 +39,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                         ),
                         Icon(
                           Icons.notifications,
-                          color: kNavyBlue,
+                          color: themeNotifier.isDark ? kCream : kNavyBlue,
                         )
                       ],
                     ),
@@ -47,14 +50,15 @@ class _AdmindashboardState extends State<Admindashboard> {
                       children: [
                         Icon(
                           Icons.person,
-                          color: kNavyBlue,
+                          color: themeNotifier.isDark ? kCream : kNavyBlue,
                         ),
                         SizedBox(
                           width: 10,
                         ),
                         Text(
                           'Administrator',
-                          style: kLightThemeText,
+                          style: TextStyle(
+                              color: themeNotifier.isDark ? kCream : kNavyBlue),
                         ),
                       ],
                     ),
@@ -66,7 +70,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                         onButtonPressed: () {
                           return Supportscreen();
                         },
-                        icon: Icons.add),
+                        icon: Icons.edit_document),
                   ),
                   Row(
                     children: [
@@ -79,7 +83,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                               onButtonPressed: () {
                                 return SearchBarApp();
                               },
-                              icon: Icons.add),
+                              icon: Icons.manage_accounts),
                         ),
                       ),
                       Expanded(
@@ -91,7 +95,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                               onButtonPressed: () {
                                 return LoanManagement();
                               },
-                              icon: Icons.add),
+                              icon: Icons.archive),
                         ),
                       ),
                     ],
@@ -103,7 +107,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                         onButtonPressed: () {
                           return Supportscreen();
                         },
-                        icon: Icons.add),
+                        icon: Icons.monetization_on),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -112,7 +116,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                         onButtonPressed: () {
                           return Supportscreen();
                         },
-                        icon: Icons.add),
+                        icon: Icons.add_chart),
                   ),
                 ],
               ),

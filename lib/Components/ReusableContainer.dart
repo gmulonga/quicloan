@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:animations/animations.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class ReusableContainer extends StatelessWidget {
   ReusableContainer({
@@ -15,8 +17,9 @@ class ReusableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return OpenContainer(
-      closedColor: kNavyBlue,
+      closedColor: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
       transitionType: ContainerTransitionType.fade,
       openBuilder: (BuildContext context, VoidCallback _) {
         return onButtonPressed() ?? Container();
@@ -38,7 +41,7 @@ class ReusableContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: kNavyBlue,
+                      color: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
                       blurRadius: 10.0,
                       offset: Offset(0, 1),
                     ),

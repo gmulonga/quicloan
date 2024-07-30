@@ -5,6 +5,8 @@ import 'package:quicloan/Components/MessageHandler.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
 import 'package:quicloan/Components/InfoDialog.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class LoanManagement extends StatefulWidget {
   @override
@@ -17,13 +19,14 @@ class _LoanManagementState extends State<LoanManagement> {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return DefaultTabController(
       length: 2,
       initialIndex: 0,
       child: Scaffold(
-        backgroundColor: kCream,
+        backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
         appBar: AppBar(
-          backgroundColor: kNavyBlue,
+          backgroundColor: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
           title: const Text(
             'Loan Management',
             style: TextStyle(color: kCream),
