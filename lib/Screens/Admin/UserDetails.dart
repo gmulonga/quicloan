@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:quicloan/Components/CustomButton.dart';
-import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Constants.dart';
-import 'package:quicloan/Screens/Admin/UserDetails.dart';
+import 'package:quicloan/Components/InputField.dart';
+import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:provider/provider.dart';
 
-class Registerscreen extends StatefulWidget {
+class Userdetails extends StatefulWidget {
   @override
-  State<Registerscreen> createState() => _RegisterscreenState();
+  State<Userdetails> createState() => _UserdetailsState();
 }
 
-class _RegisterscreenState extends State<Registerscreen> {
-  String email = '';
-  String password = '';
+class _UserdetailsState extends State<Userdetails> {
+  String name = '';
+  String ID_number = '';
+  String phone_number = '';
+  String city = '';
 
   @override
   Widget build(BuildContext context) {
@@ -21,42 +22,49 @@ class _RegisterscreenState extends State<Registerscreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Register User',
+          'User Details',
           style: TextStyle(color: kCream),
         ),
         backgroundColor: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
       ),
       backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
       body: SafeArea(
-          child: Center(
         child: ListView(
-          shrinkWrap: true,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Hero(
-                  tag: 'logo',
-                  child: Image(
-                    image: AssetImage('images/logo.png'),
-                    height: 100,
-                    width: 100,
-                  ),
-                ),
                 InputField(
-                  label: 'Email',
+                  label: 'Name',
                   onChanged: (value) {
                     setState(() {
-                      email = value;
+                      name = value;
                     });
                   },
                 ),
                 InputField(
-                  label: 'Password',
-                  password: true,
+                  label: 'ID Number',
+                  integerOnly: true,
                   onChanged: (value) {
                     setState(() {
-                      password = value;
+                      ID_number = value;
+                    });
+                  },
+                ),
+                InputField(
+                  label: 'Phone Number',
+                  integerOnly: true,
+                  onChanged: (value) {
+                    setState(() {
+                      phone_number = value;
+                    });
+                  },
+                ),
+                InputField(
+                  label: 'City',
+                  onChanged: (value) {
+                    setState(() {
+                      city = value;
                     });
                   },
                 ),
@@ -65,20 +73,15 @@ class _RegisterscreenState extends State<Registerscreen> {
                   child: CustomButton(
                     txtColor: kCream,
                     bgColor: kOrange,
-                    callBackFunction: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Userdetails()),
-                      );
-                    },
-                    label: 'Next',
+                    callBackFunction: () {},
+                    label: 'Register',
                   ),
                 ),
               ],
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }

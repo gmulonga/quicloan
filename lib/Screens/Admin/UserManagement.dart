@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
+import 'package:quicloan/Screens/Admin/RegisterScreen.dart';
 
 void main() => runApp(const SearchBarApp());
 
@@ -94,7 +95,13 @@ class _SearchBarAppState extends State<SearchBarApp> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                         child: CustomButton(
-                            callBackFunction: () {},
+                            callBackFunction: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Registerscreen()),
+                              );
+                            },
                             label: 'Add User',
                             bgColor: kOrange,
                             txtColor: kCream),
