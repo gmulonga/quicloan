@@ -37,8 +37,7 @@ class InputField extends StatelessWidget {
           TextField(
             obscureText: password,
             onChanged: onChanged,
-            style:
-                TextStyle(color: themeNotifier.isDark ? kNavyBlue : kNavyBlue),
+            style: TextStyle(color: themeNotifier.isDark ? kWhite : kNavyBlue),
             inputFormatters:
                 integerOnly ? [FilteringTextInputFormatter.digitsOnly] : null,
             decoration: InputDecoration(
@@ -46,13 +45,14 @@ class InputField extends StatelessWidget {
               contentPadding:
                   EdgeInsets.symmetric(vertical: 14.0, horizontal: 16.0),
               filled: true,
-              fillColor: kWhite,
+              fillColor: themeNotifier.isDark ? kDarkTheme1 : kWhite,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide(color: kNavyBlue),
+                borderSide: BorderSide(
+                    color: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),

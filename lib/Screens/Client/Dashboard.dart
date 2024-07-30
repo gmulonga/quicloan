@@ -24,7 +24,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
-      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
       body: SafeArea(
         child: ListView(
           children: [
@@ -78,7 +78,7 @@ class _DashboardState extends State<Dashboard> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: kNavyBlue,
+                      color: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
                     ),
                     child: Padding(
                       padding: EdgeInsets.all(15),

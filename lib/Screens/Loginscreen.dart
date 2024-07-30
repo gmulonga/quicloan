@@ -20,7 +20,7 @@ class _LoginscreenState extends State<Loginscreen> {
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
-      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
       body: SafeArea(
         child: Center(
           child: ListView(

@@ -20,9 +20,9 @@ class _LoanHistoryState extends State<LoanHistory> {
           'Loan History',
           style: TextStyle(color: kCream),
         ),
-        backgroundColor: kNavyBlue,
+        backgroundColor: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
       ),
-      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
       body: SafeArea(
         child: ListView(
           children: [
@@ -45,20 +45,6 @@ class _LoanHistoryState extends State<LoanHistory> {
                       Navigator.of(context).pop();
                     },
                     style: TextStyle(color: kOrange),
-                  ),
-                  DialogButton(
-                    label: 'Approve',
-                    onPressed: () {
-                      // Add approve functionality here
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                  DialogButton(
-                    label: 'Deny',
-                    onPressed: () {
-                      // Add deny functionality here
-                      Navigator.of(context).pop();
-                    },
                   ),
                 ]);
               },

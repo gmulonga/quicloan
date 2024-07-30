@@ -21,7 +21,7 @@ class ReusableCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: OpenContainer(
-        closedColor: themeNotifier.isDark ? kNavyBlue : kWhite,
+        closedColor: themeNotifier.isDark ? kDarkTheme1 : kWhite,
         transitionType: ContainerTransitionType.fade,
         openBuilder: (BuildContext context, VoidCallback _) {
           return onButtonPressed() ?? Container();
@@ -42,7 +42,7 @@ class ReusableCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: themeNotifier.isDark ? kNavyBlue : kWhite,
+                        color: themeNotifier.isDark ? kDarkTheme1 : kWhite,
                         blurRadius: 10.0,
                         offset: Offset(0, 1),
                       ),
@@ -55,7 +55,7 @@ class ReusableCard extends StatelessWidget {
                         Icon(
                           icon,
                           size: 40,
-                          color: kSilver,
+                          color: themeNotifier.isDark ? kCream : kSilver,
                         ),
                         SizedBox(
                           width: 10,
@@ -63,7 +63,7 @@ class ReusableCard extends StatelessWidget {
                         Container(
                           height: 50,
                           width: 3,
-                          color: kSilver,
+                          color: themeNotifier.isDark ? kCream : kSilver,
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20),
@@ -71,7 +71,7 @@ class ReusableCard extends StatelessWidget {
                             label,
                             style: TextStyle(
                                 color:
-                                    themeNotifier.isDark ? kWhite : kNavyBlue),
+                                    themeNotifier.isDark ? kCream : kNavyBlue),
                           ),
                         ),
                       ],

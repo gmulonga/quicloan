@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
+import 'package:provider/provider.dart';
+import 'package:quicloan/theme_notifier.dart';
 
 class Supportscreen extends StatefulWidget {
   @override
@@ -9,15 +11,16 @@ class Supportscreen extends StatefulWidget {
 class _SupportscreenState extends State<Supportscreen> {
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Customer Support',
           style: TextStyle(color: kCream),
         ),
-        backgroundColor: kNavyBlue,
+        backgroundColor: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
       ),
-      backgroundColor: kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
       body: ListView(
         children: [
           Column(

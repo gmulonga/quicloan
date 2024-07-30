@@ -24,9 +24,9 @@ class _LoanApplicationState extends State<LoanApplication> {
           'Apply For Loan',
           style: TextStyle(color: kCream),
         ),
-        backgroundColor: kNavyBlue,
+        backgroundColor: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
       ),
-      backgroundColor: themeNotifier.isDark ? kDarkBlue : kCream,
+      backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
       body: SafeArea(
         child: Center(
           child: ListView(

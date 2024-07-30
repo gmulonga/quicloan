@@ -7,6 +7,8 @@ import 'package:quicloan/Screens/Settings.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
 import 'package:quicloan/Screens/Admin/AdminDashboard.dart';
 import 'package:quicloan/theme_notifier.dart';
+import 'package:quicloan/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -19,7 +21,9 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     PageController _myPage = PageController(initialPage: 0);
+
     return Scaffold(
       backgroundColor: kCream,
       extendBody: true,
@@ -50,7 +54,7 @@ class _HomepageState extends State<Homepage> {
         shadowColor: kOrange,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         height: 60,
-        color: kNavyBlue,
+        color: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
         shape: const CircularNotchedRectangle(),
         notchMargin: 5,
         child: Row(

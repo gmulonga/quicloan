@@ -17,6 +17,7 @@ class ReusableTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Padding(
       padding: EdgeInsets.only(top: 10, left: 10, right: 10),
       child: Column(
@@ -26,7 +27,7 @@ class ReusableTile extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: kNavyBlue,
+                color: themeNotifier.isDark ? kDarkTheme1 : kNavyBlue,
               ),
               child: Padding(
                 padding: EdgeInsets.all(15),
