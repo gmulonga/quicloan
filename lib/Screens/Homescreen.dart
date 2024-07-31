@@ -9,6 +9,7 @@ import 'package:quicloan/Screens/Admin/AdminDashboard.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   int _selectedIndex = 0;
   bool isAdmin = true;
+  final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +115,7 @@ class _HomepageState extends State<Homepage> {
               onPressed: () {
                 setState(() {
                   _selectedIndex = 3;
+                  _auth.signOut();
                   Navigator.pop(context);
                 });
               },
