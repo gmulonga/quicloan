@@ -7,6 +7,7 @@ import 'package:quicloan/Screens/Admin/LoanManagement.dart';
 import 'package:quicloan/Screens/Admin/UserManagement.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:provider/provider.dart';
+import 'package:quicloan/Screens/Admin/LoanOverview.dart';
 
 class Admindashboard extends StatefulWidget {
   @override
@@ -68,7 +69,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                     child: ReusableContainer(
                         label: "Loan Overview",
                         onButtonPressed: () {
-                          return Supportscreen();
+                          return LoanOverview();
                         },
                         icon: Icons.edit_document),
                   ),
@@ -103,7 +104,7 @@ class _AdmindashboardState extends State<Admindashboard> {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                     child: ReusableContainer(
-                        label: "Transaction Management",
+                        label: "Transactions",
                         onButtonPressed: () {
                           return Supportscreen();
                         },
