@@ -12,8 +12,12 @@ class Registerscreen extends StatefulWidget {
 }
 
 class _RegisterscreenState extends State<Registerscreen> {
+  String name = '';
   String email = '';
   String password = '';
+  String ID_number = '';
+  String phone_number = '';
+  String city = '';
 
   @override
   Widget build(BuildContext context) {
@@ -28,20 +32,18 @@ class _RegisterscreenState extends State<Registerscreen> {
       ),
       backgroundColor: themeNotifier.isDark ? kDarkTheme2 : kCream,
       body: SafeArea(
-          child: Center(
         child: ListView(
-          shrinkWrap: true,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Hero(
-                  tag: 'logo',
-                  child: Image(
-                    image: AssetImage('images/logo.png'),
-                    height: 100,
-                    width: 100,
-                  ),
+                InputField(
+                  label: 'Name',
+                  onChanged: (value) {
+                    setState(() {
+                      name = value;
+                    });
+                  },
                 ),
                 InputField(
                   label: 'Email',
@@ -60,25 +62,46 @@ class _RegisterscreenState extends State<Registerscreen> {
                     });
                   },
                 ),
+                InputField(
+                  label: 'ID Number',
+                  integerOnly: true,
+                  onChanged: (value) {
+                    setState(() {
+                      ID_number = value;
+                    });
+                  },
+                ),
+                InputField(
+                  label: 'Phone Number',
+                  integerOnly: true,
+                  onChanged: (value) {
+                    setState(() {
+                      phone_number = value;
+                    });
+                  },
+                ),
+                InputField(
+                  label: 'City',
+                  onChanged: (value) {
+                    setState(() {
+                      city = value;
+                    });
+                  },
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: CustomButton(
                     txtColor: kCream,
                     bgColor: kOrange,
-                    callBackFunction: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Userdetails()),
-                      );
-                    },
-                    label: 'Next',
+                    callBackFunction: () {},
+                    label: 'Register',
                   ),
                 ),
               ],
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }
