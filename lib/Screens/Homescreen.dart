@@ -7,7 +7,6 @@ import 'package:quicloan/Screens/Settings.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
 import 'package:quicloan/Screens/Admin/AdminDashboard.dart';
 import 'package:quicloan/theme_notifier.dart';
-import 'package:quicloan/theme_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
