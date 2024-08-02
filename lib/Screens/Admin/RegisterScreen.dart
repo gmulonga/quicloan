@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:quicloan/Components/MessageHandler.dart';
+import 'package:quicloan/Components/CustomAlertDialog.dart';
 
 class Registerscreen extends StatefulWidget {
   @override
@@ -130,24 +131,11 @@ class _RegisterscreenState extends State<Registerscreen> {
                                   showSpinner = false;
                                 });
                                 if (e is FirebaseAuthException) {
-                                  showDialog(
+                                  CustomAlertDialog(
                                     context: context,
-                                    builder: (BuildContext context) {
-                                      return AlertDialog(
-                                        title: Text('Error'),
-                                        content: Text('${e.message}'),
-                                        actions: <Widget>[
-                                          TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context)
-                                                  .pop(); // Close the dialog
-                                            },
-                                            child: Text('OK'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
+                                    title: 'Error',
+                                    message: '${e.message}',
+                                  ).show();
                                 }
                               }
                             } else {
@@ -155,46 +143,22 @@ class _RegisterscreenState extends State<Registerscreen> {
                               setState(() {
                                 showSpinner = false;
                               });
-                              showDialog(
+                              CustomAlertDialog(
                                 context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Text('Error'),
-                                    content: Text(
-                                        'Password must be at least 8 characters long'),
-                                    actions: <Widget>[
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context)
-                                              .pop(); // Close the dialog
-                                        },
-                                        child: Text('OK'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
+                                title: 'Short Password',
+                                message:
+                                    'The password must be 8 characters long.',
+                              ).show();
                             }
                           } else {
-                            // Show a dialog if the email is invalid
-                            showDialog(
+                            setState(() {
+                              showSpinner = false;
+                            });
+                            CustomAlertDialog(
                               context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: Text('Error'),
-                                  content: Text('Invalid Email'),
-                                  actions: <Widget>[
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context)
-                                            .pop(); // Close the dialog
-                                      },
-                                      child: Text('OK'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
+                              title: 'Invalid Email',
+                              message: 'Please enter a valid email address.',
+                            ).show();
                           }
                         },
                         label: 'Register',
