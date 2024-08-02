@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:quicloan/Components/CustomAlertDialog.dart';
 
 class Loginscreen extends StatefulWidget {
   @override
@@ -97,65 +98,25 @@ class _LoginscreenState extends State<Loginscreen> {
                                 if (e is FirebaseAuthException) {
                                   // Check specific error codes
                                   if (e.code == 'network-request-failed') {
-                                    showDialog(
+                                    CustomAlertDialog(
                                       context: context,
-                                      builder: (BuildContext context) {
-                                        return AlertDialog(
-                                          title: Text('Error'),
-                                          content: Text(
-                                              'Check your internet connection'),
-                                          actions: <Widget>[
-                                            TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context)
-                                                    .pop(); // Close the dialog
-                                              },
-                                              child: Text('OK'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
+                                      title: 'Network Error!',
+                                      message:
+                                          'Please check your internet connection',
+                                    ).show();
                                   } else if (e.code == 'invalid-credential') {
-                                    showDialog(
+                                    CustomAlertDialog(
                                       context: context,
-                                      builder: (BuildContext context) {
-                                        return AlertDialog(
-                                          title: Text('Error'),
-                                          content:
-                                              Text('Invalid email or password'),
-                                          actions: <Widget>[
-                                            TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context)
-                                                    .pop(); // Close the dialog
-                                              },
-                                              child: Text('OK'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
+                                      title: 'Error!',
+                                      message:
+                                          'Please check your email or password',
+                                    ).show();
                                   } else {
-                                    // Handle other FirebaseAuthException errors
-                                    showDialog(
+                                    CustomAlertDialog(
                                       context: context,
-                                      builder: (BuildContext context) {
-                                        return AlertDialog(
-                                          title: Text('Error'),
-                                          content: Text('${e.message}'),
-                                          actions: <Widget>[
-                                            TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context)
-                                                    .pop(); // Close the dialog
-                                              },
-                                              child: Text('OK'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
+                                      title: 'Error!',
+                                      message: '${e.message}',
+                                    ).show();
                                   }
                                 } else {
                                   // Handle other types of exceptions
@@ -166,24 +127,11 @@ class _LoginscreenState extends State<Loginscreen> {
                               setState(() {
                                 showSpinner = false;
                               });
-                              showDialog(
+                              CustomAlertDialog(
                                 context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Text('Error'),
-                                    content: Text('Invalid Email'),
-                                    actions: <Widget>[
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context)
-                                              .pop(); // Close the dialog
-                                        },
-                                        child: Text('OK'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
+                                title: 'Error!',
+                                message: 'Invalid Email',
+                              ).show();
                             }
                           },
                           label: 'Login',
