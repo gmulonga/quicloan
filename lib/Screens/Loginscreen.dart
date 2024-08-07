@@ -3,7 +3,6 @@ import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Screens/Homescreen.dart';
-import 'package:quicloan/Screens/Loginscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -41,7 +40,7 @@ class _LoginscreenState extends State<Loginscreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Hero(
+                      const Hero(
                         tag: 'logo',
                         child: Image(
                           image: AssetImage('images/logo.png'),
@@ -68,7 +67,7 @@ class _LoginscreenState extends State<Loginscreen> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                            const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                         child: CustomButton(
                           txtColor: kCream,
                           bgColor: kOrange,
@@ -89,7 +88,6 @@ class _LoginscreenState extends State<Loginscreen> {
                                   showSpinner = false;
                                 });
                               } catch (e) {
-                                print(e);
                                 setState(() {
                                   showSpinner = false;
                                 });
@@ -100,16 +98,16 @@ class _LoginscreenState extends State<Loginscreen> {
                                   if (e.code == 'network-request-failed') {
                                     CustomAlertDialog(
                                       context: context,
-                                      title: 'Network Error!',
+                                      title: 'Network Error !',
                                       message:
                                           'Please check your internet connection',
                                     ).show();
                                   } else if (e.code == 'invalid-credential') {
                                     CustomAlertDialog(
                                       context: context,
-                                      title: 'Error!',
+                                      title: 'Error !',
                                       message:
-                                          'Please check your email or password',
+                                          'Invalid Credentials',
                                     ).show();
                                   } else {
                                     CustomAlertDialog(
@@ -118,9 +116,6 @@ class _LoginscreenState extends State<Loginscreen> {
                                       message: '${e.message}',
                                     ).show();
                                   }
-                                } else {
-                                  // Handle other types of exceptions
-                                  print(e);
                                 }
                               }
                             } else {
@@ -129,7 +124,7 @@ class _LoginscreenState extends State<Loginscreen> {
                               });
                               CustomAlertDialog(
                                 context: context,
-                                title: 'Error!',
+                                title: 'Error !',
                                 message: 'Invalid Email',
                               ).show();
                             }
@@ -139,7 +134,7 @@ class _LoginscreenState extends State<Loginscreen> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                            const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                         child: Align(
                           alignment: Alignment.centerRight,
                           child: GestureDetector(

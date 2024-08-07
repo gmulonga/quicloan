@@ -3,8 +3,6 @@ import 'package:quicloan/Constants.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:quicloan/Components/Table.dart';
-import 'package:quicloan/theme_notifier.dart';
-import 'package:provider/provider.dart';
 
 class Transactions extends StatelessWidget {
   @override

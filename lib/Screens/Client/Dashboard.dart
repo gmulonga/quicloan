@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableCard.dart';
-import 'package:quicloan/Screens/Client/Userscreen.dart';
-import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/ProgressBars.dart';
 import 'package:quicloan/Screens/Client/LoanAppliaction.dart';
 import 'package:quicloan/Screens/Client/Payment.dart';

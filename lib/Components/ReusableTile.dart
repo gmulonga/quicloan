@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
-import 'package:animations/animations.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:provider/provider.dart';
 
