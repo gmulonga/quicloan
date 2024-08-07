@@ -89,12 +89,9 @@ class _LoginscreenState extends State<Loginscreen> {
                                   showSpinner = false;
                                 });
                               } catch (e) {
-                                print(e);
                                 setState(() {
                                   showSpinner = false;
                                 });
-
-                                // Check if the error is due to invalid credentials
                                 if (e is FirebaseAuthException) {
                                   // Check specific error codes
                                   if (e.code == 'network-request-failed') {
