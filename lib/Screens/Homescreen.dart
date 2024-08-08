@@ -17,13 +17,43 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   int _selectedIndex = 0;
-  bool isAdmin = true;
+  bool isAdmin = false;
   final _auth = FirebaseAuth.instance;
+  late User loggedInUser;
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+
+  void getCurrentUser() async {
+    try {
+      final user = await _auth.currentUser;
+      if (user != null) {
+        setState(() {
+          loggedInUser = user;
+          getAdmin();
+        });
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void getAdmin() {
+    if (loggedInUser.email == "admin@gmail.com") {
+      isAdmin = true;
+    } else {
+      isAdmin = false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     PageController _myPage = PageController(initialPage: 0);
+
 
     return Scaffold(
       backgroundColor: kCream,
