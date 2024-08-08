@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Constants.dart';
-import 'package:quicloan/Screens/Admin/UserDetails.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -103,8 +102,7 @@ class _RegisterscreenState extends State<Registerscreen> {
                       },
                     ),
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       child: CustomButton(
                         txtColor: kCream,
                         bgColor: kOrange,
@@ -139,7 +137,6 @@ class _RegisterscreenState extends State<Registerscreen> {
                                 }
                               }
                             } else {
-                              // Show a dialog if the password is less than 8 characters
                               setState(() {
                                 showSpinner = false;
                               });

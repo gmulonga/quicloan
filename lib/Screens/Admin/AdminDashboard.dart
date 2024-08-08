@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quicloan/Constants.dart';
 import 'package:quicloan/Components/ReusableContainer.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
-import 'package:quicloan/Screens/Admin/RegisterScreen.dart';
 import 'package:quicloan/Screens/Admin/LoanManagement.dart';
 import 'package:quicloan/Screens/Admin/UserManagement.dart';
 import 'package:quicloan/theme_notifier.dart';
