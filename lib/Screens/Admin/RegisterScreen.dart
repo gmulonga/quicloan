@@ -137,7 +137,6 @@ class _RegisterscreenState extends State<Registerscreen> {
                                 }
                               }
                             } else {
-                              // Show a dialog if the password is less than 8 characters
                               setState(() {
                                 showSpinner = false;
                               });
