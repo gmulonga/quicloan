@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicloan/theme_notifier.dart';
+import 'package:quicloan/Utilis/theme_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:quicloan/Utilis/Constants.dart'; // Assuming kDarkTheme1, kNavyBlue, and kCream are defined in Constants.dart
 

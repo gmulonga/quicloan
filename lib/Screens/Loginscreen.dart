@@ -4,7 +4,7 @@ import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Screens/Homescreen.dart';
 import 'package:provider/provider.dart';
-import 'package:quicloan/theme_notifier.dart';
+import 'package:quicloan/Utilis/theme_notifier.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:quicloan/Components/CustomAlertDialog.dart';

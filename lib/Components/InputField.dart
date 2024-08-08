@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quicloan/Utilis/Constants.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:quicloan/theme_notifier.dart';
+import 'package:quicloan/Utilis/theme_notifier.dart';
 
 class InputField extends StatelessWidget {
   InputField({

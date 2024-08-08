@@ -5,7 +5,7 @@ import 'package:quicloan/Components/ProgressBars.dart';
 import 'package:quicloan/Screens/Client/LoanAppliaction.dart';
 import 'package:quicloan/Screens/Client/Payment.dart';
 import 'package:quicloan/Screens/Client/LoanHistory.dart';
-import 'package:quicloan/theme_notifier.dart';
+import 'package:quicloan/Utilis/theme_notifier.dart';
 import 'package:provider/provider.dart';
 
 class Dashboard extends StatefulWidget {
