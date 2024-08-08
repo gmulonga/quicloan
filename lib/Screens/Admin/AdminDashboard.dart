@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicloan/Constants.dart';
+import 'package:quicloan/Utilis/Constants.dart';
 import 'package:quicloan/Components/ReusableContainer.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
 import 'package:quicloan/Screens/Admin/LoanManagement.dart';

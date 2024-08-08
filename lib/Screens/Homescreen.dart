@@ -1,14 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
 import 'package:quicloan/Screens/Client/Dashboard.dart';
-import 'package:quicloan/Constants.dart';
+import 'package:quicloan/Utilis/Constants.dart';
 import 'package:quicloan/Screens/Client/Userscreen.dart';
 import 'package:quicloan/Screens/Settings.dart';
 import 'package:quicloan/Screens/Client/SupportScreen.dart';
 import 'package:quicloan/Screens/Admin/AdminDashboard.dart';
 import 'package:quicloan/theme_notifier.dart';
 import 'package:provider/provider.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:quicloan/Services/quicloanAPI.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -18,8 +19,8 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   int _selectedIndex = 0;
   bool isAdmin = false;
-  final _auth = FirebaseAuth.instance;
   late User loggedInUser;
+  QuicloanAPI api = QuicloanAPI();
 
   @override
   void initState() {
@@ -29,7 +30,7 @@ class _HomepageState extends State<Homepage> {
 
   void getCurrentUser() async {
     try {
-      final user = await _auth.currentUser;
+      final user = api.getCurrentUser();
       if (user != null) {
         setState(() {
           loggedInUser = user;
@@ -53,7 +54,6 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     PageController _myPage = PageController(initialPage: 0);
-
 
     return Scaffold(
       backgroundColor: kCream,
@@ -144,7 +144,7 @@ class _HomepageState extends State<Homepage> {
               onPressed: () {
                 setState(() {
                   _selectedIndex = 3;
-                  _auth.signOut();
+                  api.signOut();
                   Navigator.pop(context);
                 });
               },

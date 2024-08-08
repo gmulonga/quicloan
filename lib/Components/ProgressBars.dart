@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicloan/Constants.dart';
+import 'package:quicloan/Utilis/Constants.dart';
 
 class ProgressBars extends StatelessWidget {
   final double percentageValue;

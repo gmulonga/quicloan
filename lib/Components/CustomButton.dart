@@ -1,4 +1,4 @@
-import 'package:quicloan/Constants.dart';
+import 'package:quicloan/Utilis/Constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicloan/Constants.dart';
+import 'package:quicloan/Utilis/Constants.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
 import 'package:quicloan/Components/InfoDialog.dart';
 import 'package:quicloan/theme_notifier.dart';
