@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
+
 import 'package:quicloan/Utilis/Constants.dart';
+import 'package:quicloan/Utilis/theme_notifier.dart';
 import 'package:quicloan/Components/InputField.dart';
 import 'package:quicloan/Components/MessageHandler.dart';
 import 'package:quicloan/Components/CustomButton.dart';
 import 'package:quicloan/Components/ReusableTile.dart';
 import 'package:quicloan/Components/InfoDialog.dart';
-import 'package:quicloan/Utilis/theme_notifier.dart';
-import 'package:provider/provider.dart';
 
 class LoanManagement extends StatefulWidget {
   @override

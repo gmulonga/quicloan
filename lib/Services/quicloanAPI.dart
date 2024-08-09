@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:quicloan/Components/CustomAlertDialog.dart';
 import 'package:quicloan/Components/MessageHandler.dart';
@@ -6,6 +7,7 @@ import 'package:quicloan/Utilis/Constants.dart';
 
 class QuicloanAPI {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final _firestore = FirebaseFirestore.instance;
 
   User? getCurrentUser() {
     try {
@@ -23,7 +25,7 @@ class QuicloanAPI {
     required Function(bool) toggleSpinner,
   }) async {
     try {
-      toggleSpinner(true); // Show spinner
+      toggleSpinner(true);
       final newUser = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
@@ -40,6 +42,26 @@ class QuicloanAPI {
           message: '${e.message}',
         ).show();
       }
+    }
+  }
+
+  Future<void> addUser({
+    required String name,
+    required String email,
+    required String id_number,
+    required String phone_number,
+    required String city
+  }) async {
+    try {
+      _firestore.collection('users').add({
+        'email': email,
+        'name': name,
+        'phone': phone_number,
+        'city': city,
+        'id_number': id_number,
+      });
+    } catch (e) {
+      print(e);
     }
   }
 

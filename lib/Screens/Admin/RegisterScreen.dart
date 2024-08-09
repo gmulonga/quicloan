@@ -24,7 +24,6 @@ class _RegisterscreenState extends State<Registerscreen> {
   String city = '';
 
   bool isValidEmail(String email) {
-    // Regular expression for email validation
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
     return emailRegex.hasMatch(email);
   }
@@ -120,6 +119,15 @@ class _RegisterscreenState extends State<Registerscreen> {
                               context: context,
                               toggleSpinner: toggleSpinner,
                             );
+                            setState(() {
+                              api.addUser(
+                                  name: name,
+                                  email: email,
+                                  id_number: ID_number,
+                                  phone_number: phone_number,
+                                  city: city
+                              );
+                            });
                           } else {
                             CustomAlertDialog(
                               context: context,

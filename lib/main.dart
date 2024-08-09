@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 import 'package:quicloan/Screens/Homescreen.dart';
 import 'package:quicloan/Screens/Loginscreen.dart';
 import 'package:quicloan/Utilis/theme_notifier.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

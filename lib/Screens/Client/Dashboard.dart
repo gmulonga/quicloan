@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
+
 import 'package:quicloan/Utilis/Constants.dart';
+import 'package:quicloan/Utilis/theme_notifier.dart';
 import 'package:quicloan/Components/ReusableCard.dart';
 import 'package:quicloan/Components/ProgressBars.dart';
 import 'package:quicloan/Screens/Client/LoanAppliaction.dart';
 import 'package:quicloan/Screens/Client/Payment.dart';
 import 'package:quicloan/Screens/Client/LoanHistory.dart';
-import 'package:quicloan/Utilis/theme_notifier.dart';
-import 'package:provider/provider.dart';
+
 
 class Dashboard extends StatefulWidget {
   @override
